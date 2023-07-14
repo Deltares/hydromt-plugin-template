@@ -1,0 +1,20 @@
+---
+Title: "{{cookiecutter.project_name}}"
+---
+
+::: {layout-ncol=2 layout-valign="bottom"}
+<a href="https://www.deltares.nl/">
+    <img alt="Deltares logo"
+        src="https://user-images.githubusercontent.com/4471859/187672447-adb9cb11-16ca-488b-bef9-08e059fe6d55.svg"
+        height="60">
+</a>
+
+# Introduction
+## What is {{cookiecutter.project_name}}?
+This is where you'll explain about your new plugin. 
+
+## Installation
+Explain how to install your plugin
+
+## Example usage
+Show off a few examples. 

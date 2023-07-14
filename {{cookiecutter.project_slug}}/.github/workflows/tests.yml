@@ -1,0 +1,47 @@
+---
+name: Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tests/*
+      - {{cookiecutter.project_slug}}/*
+  pull_request:
+    branches: [main]
+    paths:
+      - tests/*
+      - {{cookiecutter.project_slug}}/*
+
+jobs:
+  Test-matrix:
+    name:{{' ${{ matrix.os }} - py${{ matrix.python-version }} '}}
+    runs-on: {{'${{ matrix.os }} '}}
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: bash -l {0}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ['3.9', '3.10', '3.11']
+    steps:
+      - uses: actions/checkout@v3
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: {{'${{ matrix.python-version }} '}}
+          miniforge-variant: Mambaforge
+          channels: conda-forge, defaults
+          channel-priority: strict
+          environment-file: environment.yml
+          activate-environment: {{cookiecutter.project_slug}}
+
+      - name: Test
+        run: python -m pytest --verbose --cov={{cookiecutter.project_slug}} --cov-report xml
+
+      - uses: codecov/codecov-action@v3
+
+concurrency:
+  group: {{' ${{ github.workflow }}-${{ github.ref }} '}}
+  cancel-in-progress: true
