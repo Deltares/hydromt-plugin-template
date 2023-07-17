@@ -1,5 +1,7 @@
 import pytest
 
+import {{cookiecutter.project_slug}}
+
 
 @pytest.fixture()
 def random_number():

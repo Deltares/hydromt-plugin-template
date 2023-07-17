@@ -3,12 +3,11 @@ requires = ["flit_core >=3.4.0,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "{{cookiecutter.project_name}}"
+name = "{{cookiecutter.project_slug}}"
 dependencies = []
 
 version = "{{cookiecutter.version}}"
 description = "{{cookiecutter.project_description}}"
-license = "{{cookiecutter.license}}"
 
 requires-python = ">=3.9"
 classifiers = [
@@ -23,8 +22,11 @@ classifiers = [
 # group = [dep1, dep2,...]
 
 [project.urls]
-Documentation = "https://deltares.github.io/{{cookiecutter.project_slug}}"
-Source = "https://github.com/Deltares/{{cookiecutter.project_slug}}"
+Documentation = "{{ cookiecutter.docs_url }}"
+Source = "{{ cookiecutter.project_url }}"
+
+[project.entry-points."hydromt.models"] 
+{{cookiecutter.project_slug}} = "{{cookiecutter.project_slug}}.{{cookiecutter.main_file_basename}}:{{cookiecutter.model_name}}"
 
 [tool.black]
 line-length = 88
