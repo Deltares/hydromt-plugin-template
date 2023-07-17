@@ -1,0 +1,47 @@
+project:
+  type: website
+
+website:
+  title: "{{cookiecutter.project_name}}"
+  page-navigation: true
+  navbar:
+    left:
+      - text: "Python tooling"
+        file: python/index.qmd
+      - text: "Coupled models"
+        file: couple/index.qmd
+      - text: "Contributing"
+        file: contribute/index.qmd
+    right:
+      - icon: github
+        href: {{ cookiecutter.project_url }}
+        aria-label: GitHub
+
+  sidebar:
+    - title: "Python tooling"
+      contents:
+        - python/index.qmd
+        - python/examples.ipynb
+    - title: "Contributing"
+      contents:
+        - contribute/index.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: assets/styles.css
+    toc: true
+
+bibliography: references.bib
+number-sections: true
+
+quartodoc:
+  style: pkgdown
+  dir: python/reference
+  title: API Reference
+  package: {{cookiecutter.project_slug}}
+  sections:
+    - title: Model
+      desc: The Model class represents an entire {{ cookiecutter.project_name }} model.
+      contents:
+        - Model

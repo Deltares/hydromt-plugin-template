@@ -23,8 +23,8 @@ classifiers = [
 # group = [dep1, dep2,...]
 
 [project.urls]
-Documentation = "https://deltares.github.io/{{cookiecutter.project_slug}}"
-Source = "https://github.com/Deltares/{{cookiecutter.project_slug}}"
+Documentation = {{ cookiecutter.docs_url }}
+Source = {{ cookiecutter.project_url }}
 
 [project.entry-points."hydromt.models"] 
 {{cookiecutter.project_slug}} = "{{cookiecutter.project_slug}}.{{cookiecutter.main_file_basename}}:{{cookiecutter.model_name}}"
