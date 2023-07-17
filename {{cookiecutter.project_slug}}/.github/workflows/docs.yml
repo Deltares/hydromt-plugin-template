@@ -79,5 +79,4 @@ jobs:
           render: false
           target: gh-pages
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}j
-      
+          GITHUB_TOKEN: {{' ${{ secrets.GITHUB_TOKEN }}  '}}      
