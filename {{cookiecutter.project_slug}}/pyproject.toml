@@ -3,12 +3,11 @@ requires = ["flit_core >=3.4.0,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "{{cookiecutter.project_name}}"
+name = "{{cookiecutter.project_slug}}"
 dependencies = []
 
 version = "{{cookiecutter.version}}"
 description = "{{cookiecutter.project_description}}"
-license = "{{cookiecutter.license}}"
 
 requires-python = ">=3.9"
 classifiers = [

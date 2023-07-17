@@ -8,10 +8,8 @@ website:
     left:
       - text: "Python tooling"
         file: python/index.qmd
-      - text: "Coupled models"
-        file: couple/index.qmd
       - text: "Contributing"
-        file: contribute/index.qmd
+        file: contributing/index.qmd
     right:
       - icon: github
         href: {{ cookiecutter.project_url }}
@@ -24,7 +22,7 @@ website:
         - python/examples.ipynb
     - title: "Contributing"
       contents:
-        - contribute/index.qmd
+        - contributing/index.qmd
 
 format:
   html:
