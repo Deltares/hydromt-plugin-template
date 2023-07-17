@@ -1,6 +1,5 @@
 import pytest
 
-import hydromt
 import {{cookiecutter.project_slug}}
 
 
