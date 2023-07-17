@@ -1,5 +1,8 @@
 import pytest
 
+import hydromt
+import {{cookiecutter.project_slug}}
+
 
 @pytest.fixture()
 def random_number():
