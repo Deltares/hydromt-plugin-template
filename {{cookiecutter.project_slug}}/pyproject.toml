@@ -4,13 +4,18 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "{{cookiecutter.project_slug}}"
-dependencies = []
+dependencies = [
+    "hydromt",
+    "tomli",        # parsing toml files
+]
 
 version = "{{cookiecutter.version}}"
 description = "{{cookiecutter.project_description}}"
 
 requires-python = ">=3.9"
 classifiers = [
+    # https://pypi.python.org/pypi?%3Aaction=list_classifiers
+    "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Hydrology",
@@ -20,13 +25,26 @@ classifiers = [
 [project.optional-dependencies]
 # here you can add dependency groups like this: 
 # group = [dep1, dep2,...]
+doc = []
+dev = [
+    "black",            # code formatting
+    "ruff",             # code linting
+    "mypy",             # static type checking
+    "pre-commit",       # pre-commit hooks
+]
+test = [
+    "pytest>=2.7.3",    # testing framework
+    "pytest-cov",       # pytest plugin for coverage reports
+]
+
+full = ["{{cookiecutter.project_slug}}[doc,dev,test]"]
 
 [project.urls]
 Documentation = "{{ cookiecutter.docs_url }}"
 Source = "{{ cookiecutter.project_url }}"
 
 [project.entry-points."hydromt.models"] 
-{{cookiecutter.project_slug}} = "{{cookiecutter.project_slug}}.{{cookiecutter.main_file_basename}}:{{cookiecutter.model_name}}"
+{{cookiecutter.model_shortname}} = "{{cookiecutter.project_slug}}.{{cookiecutter.model_shortname}}:{{cookiecutter.model_classname}}"
 
 [tool.black]
 line-length = 88
@@ -34,7 +52,6 @@ target-version = ['py39']
 
 [tool.ruff]
 line-length = 88
-
 # enable pydocstyle (E), pyflake (F) and isort (I), pytest-style (PT)
 select = ["E", "F", "I", "PT", "D"]
 ignore-init-module-imports = true
