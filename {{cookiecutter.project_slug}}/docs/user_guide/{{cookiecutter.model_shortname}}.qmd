@@ -28,7 +28,7 @@ setup, read, write methods are exposed. Click on a specific method see its docum
 +---------------------+----------------------------------------------------------------------------+
 
 ## Model components and attributes
-The following table provides an overview of which {{cookicutter.model_classname}}
+The following table provides an overview of which {{cookiecutter.model_classname}}
 component contains which {{cookiecutter.model_shortname}} in- and output files. The files are read and written with the associated
 read- and write- methods, i.e. `read_config` and `write_config` for the `config` component.
 
@@ -59,7 +59,7 @@ This plugin allows to build from scratch a complete model from available data.
 4. **Build** your model using the CLI or Python interface.
 
 ```
-    hydromt build {{cookiecutter.project_shortname}} path/to/built_model -r "{'bbox': [xmin, ymin, xmax, ymax]}" -i {{cookiecutter.project_shortname}}_build.ini -d data_sources.yml -vvv
+    hydromt build {{cookiecutter.model_shortname}} path/to/built_model -r "{'bbox': [xmin, ymin, xmax, ymax]}" -i {{cookiecutter.model_shortname}}_build.ini -d data_sources.yml -vvv
 ```
 
 The recommended [region options](https://deltares.github.io/hydromt/latest/user_guide/model_region.html)
@@ -72,7 +72,7 @@ for a proper implementation of this model are:
 You can find more information on the steps to build a model in [HydroMT Core documentation](https://deltares.github.io/hydromt/latest/user_guide/model_build.html).
 
 # Updating a model
-To add or change one or more components of an existing {{cookiecutter.project_shortname}} model the `update` method can be used.
+To add or change one or more components of an existing {{cookiecutter.model_shortname}} model the `update` method can be used.
 
 **Steps in brief:**
 
@@ -82,7 +82,7 @@ To add or change one or more components of an existing {{cookiecutter.project_sh
 4. **Update** your model using the CLI or Python interface.
 
 ```
-    hydromt update {{cookiecutter.project_shortname}} path/to/model_to_update -o path/to/updated_model -i {{cookiecutter.project_shortname}}_update.ini -d data_sources.yml -vvv
+    hydromt update {{cookiecutter.model_shortname}} path/to/model_to_update -o path/to/updated_model -i {{cookiecutter.model_shortname}}_update.ini -d data_sources.yml -vvv
 ```
 
 :::{.callout-note}
