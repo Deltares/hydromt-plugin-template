@@ -7,18 +7,14 @@ on:
     branches: [main]
     paths:
       - tests/*
-      - hydromt/*
-      - data/*
+      - {{cookiecutter.project_slug}}/*
       - docs/*
-      - examples/*
   pull_request:
     branches: [main]
     paths:
       - tests/*
-      - hydromt/*
-      - data/*
+      - {{cookiecutter.project_slug}}/*
       - docs/*
-      - examples/*
 
 jobs:
   # Build docs on Linux
@@ -63,7 +59,6 @@ jobs:
 
       - name: Generate API pages
         working-directory: docs
-        # objects.json: https://github.com/machow/quartodoc/issues/63
         run: |
           quartodoc build
           rm objects.json

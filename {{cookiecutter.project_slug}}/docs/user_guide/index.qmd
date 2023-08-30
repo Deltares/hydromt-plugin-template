@@ -1,0 +1,17 @@
+---
+Title: 'User guide'
+---
+
+With the **{{cookiecutter.project_name}} plugin**, users can easily benefit from the rich set of tools of the
+[HydroMT package](https://deltares.github.io/hydromt/latest/index.html) to build and update
+{{cookiecutter.model_shortname}} models from available global and local data.
+
+This plugin assists the {{cookiecutter.model_shortname}} modeller in:
+
+- Quickly setting up a base {{cookiecutter.model_shortname}} model and default parameter values
+- Making maximum use of the best available global or local data
+- Adjusting and updating components of a {{cookiecutter.model_shortname}} model and their associated parameters in a consistent way
+
+One {{cookiecutter.model_shortname}} Model classes is currently available:
+
+- ``{{cookiecutter.model_shortname}}`` ({{cookiecutter.model_type}}): class for the {{cookiecutter.model_shortname}} model.

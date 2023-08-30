@@ -2,8 +2,4 @@
 Title: 'Contributing'
 ---
 
-We only have three rules for contributing: 
-
-1. be cool
-2. be smart
-3. write good code
+If you would like to contribute, we follow the same guide as [HydroMT developper's guide](https://deltares.github.io/hydromt/latest/dev/contributing).
