@@ -68,6 +68,8 @@ class {{cookiecutter.model_classname}}({{cookiecutter.model_type}}):
         if self._CATALOGS:
             if isinstance(data_libs, str):
                 data_libs = [data_libs]
+            if data_libs is None: 
+                data_libs = []
             data_libs = data_libs + self._CATALOGS
 
         super().__init__(

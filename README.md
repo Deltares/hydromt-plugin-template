@@ -43,4 +43,4 @@ This template can be used using [cookiecutter](https://github.com/cookiecutter/c
   - [mypy](https://github.com/python/mypy)
 - Configured [pre-commit](https://github.com/pre-commit/pre-commit) to make sure linters are enforced
 - Default github actions for Testing, generating docs, and running pre-commit checks
-- Quarto as docs generator
+- [Quarto](https://quarto.org/docs/get-started/) as docs generator
