@@ -1,4 +1,4 @@
-# {{cookiecutter.project_name}}: {{cookiecutter.project_description}}
+# {{cookiecutter.project_name}}: {{cookiecutter.project_tagline}}
 
 # Introduction
 ## What is {{cookiecutter.project_name}}?

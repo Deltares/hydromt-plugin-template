@@ -1,4 +1,4 @@
-"""{{cookiecutter.project_name}}: {{cookiecutter.project_description}}"""
+"""{{cookiecutter.project_name}}: {{cookiecutter.project_tagline}}"""
 
 from os.path import dirname, join, abspath
 

@@ -10,7 +10,7 @@ dependencies = [
 ]
 
 version = "{{cookiecutter.version}}"
-description = "{{cookiecutter.project_description}}"
+description = "{{cookiecutter.project_tagline}}"
 
 requires-python = ">=3.9"
 classifiers = [
@@ -29,7 +29,6 @@ doc = []
 dev = [
     "black",            # code formatting
     "ruff",             # code linting
-    "mypy",             # static type checking
     "pre-commit",       # pre-commit hooks
 ]
 test = [
