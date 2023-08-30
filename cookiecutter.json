@@ -4,7 +4,7 @@
   "project_url": "https://github.com/Deltares/{{cookiecutter.project_slug}}",
   "docs_url": "https://deltares.github.io/{{cookiecutter.project_slug}}",
   "model_classname": "PluginModel",
-  "model_type": "Model/GridModel/MeshModel/LumpedModel/NetworkModel", 
+  "model_type": ["Model","GridModel","MeshModel","LumpedModel","NetworkModel"], 
   "model_shortname": "{{ cookiecutter.model_classname.lower().replace('model','') }}", 
   "project_tagline": "A HydroMT plugin for plugin models.",
   "version": "0.1.0"
