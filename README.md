@@ -29,7 +29,7 @@ This template can be used using [cookiecutter](https://github.com/cookiecutter/c
   - project_url: The url of your project (this will be used as the url of the github repository). Eg *https://github.com/Deltares/hydromt_plugin*
   - docs_url: The url of the documentation of your project (this will be used as the url of the documentation). Eg *https://deltares.github.io/hydromt_plugin*
   - model_classname: The name of the new HydroMT Model subclass that you are creating. Eg *PluginModel*
-  - model_type: Type of HydroMT model corresponding to your model, one of [Model, GridModel, MeshModel, LumpedModel, NetworkModel] (!careful with syntax!)
+  - model_type: Type of HydroMT model corresponding to your model, one of [Model, GridModel, MeshModel, VectorModel, NetworkModel] (!careful with syntax!)
   - model_shortname: The short name of your model. This will be used as the HydroMT Command Line name of your plugin and as the name of the main python file of your project (which will contain the definition of your new Model class). Eg *plugin*
   - project_tagline: A short tagline (short description phrase) for your project. Eg *A HydroMT plugin for plugin models.*
   - project_version: The version of your project. Eg *0.1.0*
