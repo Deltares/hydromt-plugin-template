@@ -14,7 +14,7 @@ This template can be used using [cookiecutter](https://github.com/cookiecutter/c
   # You'll be prompted to enter values.
   # Then it'll create your Python package in the current working directory,
   # based on those values.
-  $ cookiecutter https://github.com/savente93/hydromt-plugin-template
+  $ cookiecutter https://github.com/Deltares/hydromt-plugin-template
   ```
 
   You will be asked some questions and the template will be generated for you! 
