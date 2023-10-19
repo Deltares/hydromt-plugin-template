@@ -27,6 +27,9 @@ class {{cookiecutter.model_classname}}({{cookiecutter.model_type}}):
     # For example to include model specific parameter data or mapping
     # These default catalogs can be placed in the _DATADIR folder.
     _CATALOGS: List[str] = []
+    # Cli args forwards the region and res arguments to the correct functions
+    # Uncomment, check and overwrite if needed
+    # _CLI_ARGS = {"region": <your func>, "res": <your func>}
 
     def __init__(
         self,
