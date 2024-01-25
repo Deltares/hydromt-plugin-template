@@ -1,7 +1,9 @@
 ---
-name: Tests
+name: Tests development
 
 on:
+  schedule:
+    - cron: 0 0 * * * # run on main everyday at 00:00
   push:
     branches: [main]
     paths:
@@ -13,19 +15,21 @@ on:
       - tests/*
       - {{cookiecutter.project_slug}}/*
 
-jobs:
-  Test-matrix:
+Jobs:
+  Test-Dev:
     name: {{' ${{ matrix.os }} - py${{ matrix.python-version }} '}}
     runs-on: {{'${{ matrix.os }} '}}
     timeout-minutes: 10
     defaults:
       run:
         shell: bash -l {0}
+    
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
         python-version: ['3.9', '3.10', '3.11']
+
     steps:
       - uses: actions/checkout@v3
       - run: pip install tomli
@@ -38,6 +42,10 @@ jobs:
           channel-priority: strict
           environment-file: environment.yml
           activate-environment: {{cookiecutter.project_slug}}
+
+      - name: Install HydroMT-core dev
+        run: |
+          python -m pip install git+https://github.com/Deltares/hydromt.git@main --user
 
       - name: Test
         run: python -m pytest --verbose --cov={{cookiecutter.project_slug}} --cov-report xml
